@@ -12,13 +12,14 @@ def canUnlockAll(boxes):
     Returns:
         [bool]: [true if all boxes can be opened, false otherwise]
     """
-    seen = [False] * len(boxes)
-    seen[0] = True
-    stack = [0]
-    while stack:
-        box = stack.pop()
+    dfs = [0]
+    seen = {0}
+    while dfs:
+        box = dfs.pop()
         for key in boxes[box]:
-            if not seen[key]:
-                stack.append(key)
-                seen[key] = True
-    return all(seen)
+            if key not in seen:
+                dfs.append(key)
+                seen.add(key)
+            if len(seen) == len(boxes):
+                return True
+    return len(seen) == len(boxes)
