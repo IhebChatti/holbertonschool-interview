@@ -12,9 +12,18 @@ def canUnlockAll(boxes):
     Returns:
         [bool]: [true if all boxes can be opened, false otherwise]
     """
-    seen = [0]
-    for i in seen:
-        for key in boxes[i]:
-            if key not in seen and i < len(boxes):
-                seen.append(key)
-    return len(seen) == len(boxes)
+    if not boxes[0] or not isinstance(boxes[0], list):
+        return false
+    dfs = [0]
+    seen = {0}
+    while dfs:
+        box = dfs.pop()
+        for key in boxes[box]:
+            if key not in seen:
+                dfs.append(key)
+                seen.add(key)
+            if len(seen) == len(boxes):
+                return True
+    if len(seen) == len(boxes):
+        return True
+    return False
