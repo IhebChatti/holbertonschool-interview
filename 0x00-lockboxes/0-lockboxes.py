@@ -22,4 +22,6 @@ def canUnlockAll(boxes):
                 seen.add(key)
             if len(seen) == len(boxes):
                 return True
-    return len(seen) == len(boxes)
+    if len(seen) == len(boxes):
+        return True
+    return False
