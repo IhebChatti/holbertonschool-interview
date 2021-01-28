@@ -3,7 +3,6 @@
 """
 from sys import stdin
 
-
 status_codes = {
         "200": 0,
         "301": 0,
@@ -15,6 +14,8 @@ status_codes = {
         "500": 0
     }
 file_size = 0
+
+
 def log_stats():
     """[log_stats: function to print the sats with size]
     """
@@ -38,7 +39,7 @@ if __name__ == "__main__":
                 log_stats()
                 count = -1
             count += 1
-    except KeyboardInterrupt as e:
+    except KeyboardInterrupt:
         log_stats()
-        raise(e)
+        raise
     log_stats()
