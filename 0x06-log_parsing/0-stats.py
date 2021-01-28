@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 parsed = line.split()
                 code = parsed[-2]
                 size = parsed[-1]
-                if code in status_codes.keys():
+                if code in status_codes:
                     status_codes[code] += 1
             file_size += int(size)
             if count == 9:
