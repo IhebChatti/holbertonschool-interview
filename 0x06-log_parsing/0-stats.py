@@ -19,7 +19,7 @@ file_size = 0
 def log_stats():
     """[log_stats: function to print the sats with size]
     """
-    print("File size: {}".format(file_size))
+    print("File size: {:d}".format(file_size))
     for st in sorted(status_codes.keys()):
         if status_codes[st]:
             print("{}: {}".format(st, status_codes[st]))
