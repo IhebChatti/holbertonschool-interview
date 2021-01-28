@@ -31,9 +31,9 @@ if __name__ == "__main__":
                 parsed = line.split()
                 code = parsed[-2]
                 size = parsed[-1]
-                file_size += int(size)
                 if code in status_codes.keys():
                     status_codes[code] += 1
+            file_size += int(size)
             if count == 9:
                 log_stats()
                 count = 0
@@ -41,3 +41,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt as e:
         log_stats()
         raise(e)
+    log_stats()
