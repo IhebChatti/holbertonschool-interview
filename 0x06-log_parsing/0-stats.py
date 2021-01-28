@@ -40,5 +40,5 @@ if __name__ == "__main__":
             if count == 10:
                 log_stats()
                 count = 0
-    except Exception as e:
+    except KeyboardInterrupt:
         log_stats()
