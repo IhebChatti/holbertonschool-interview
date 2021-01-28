@@ -21,8 +21,8 @@ def log_stats():
     """
     print("File size: {:d}".format(file_size))
     for st in sorted(status_codes.keys()):
-        if status_codes[st]:
-            print("{}: {}".format(st, status_codes[st]))
+        if status_codes[st] != 0:
+            print("{}: {:d}".format(st, status_codes[st]))
 
 if __name__ == "__main__":
     count = 0
