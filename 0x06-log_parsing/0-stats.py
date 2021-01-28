@@ -36,7 +36,7 @@ if __name__ == "__main__":
             file_size += int(size)
             if count == 9:
                 log_stats()
-                count = 0
+                count = -1
             count += 1
     except KeyboardInterrupt as e:
         log_stats()
