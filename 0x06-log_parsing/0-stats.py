@@ -36,9 +36,10 @@ if __name__ == "__main__":
                 file_size += int(size)
                 if code in status_codes.keys():
                     status_codes[code] += 1
-                count += 1
             if count == 10:
                 log_stats()
                 count = 0
+            count += 1
     except KeyboardInterrupt:
         log_stats()
+        raise
