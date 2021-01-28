@@ -28,7 +28,7 @@ if __name__ == "__main__":
     count = 0
     try:
         for line in stdin:
-            if len(line) >= 3:
+            if len(line) >= 2:
                 parsed = line.split()
                 code = parsed[-2]
                 size = parsed[-1]
