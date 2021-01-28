@@ -15,8 +15,6 @@ status_codes = {
         "500": 0
     }
 file_size = 0
-
-
 def log_stats():
     """[log_stats: function to print the sats with size]
     """
@@ -36,7 +34,7 @@ if __name__ == "__main__":
                 file_size += int(size)
                 if code in status_codes.keys():
                     status_codes[code] += 1
-            if count == 10:
+            if count == 9:
                 log_stats()
                 count = 0
             count += 1
