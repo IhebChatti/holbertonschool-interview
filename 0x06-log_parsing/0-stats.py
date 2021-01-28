@@ -38,6 +38,6 @@ if __name__ == "__main__":
                 log_stats()
                 count = 0
             count += 1
-    except KeyboardInterrupt:
+    except KeyboardInterrupt as e:
         log_stats()
-        raise
+        raise(e)
