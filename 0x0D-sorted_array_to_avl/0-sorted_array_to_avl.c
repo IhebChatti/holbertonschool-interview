@@ -26,27 +26,35 @@ avl_t *binary_tree_node(avl_t *parent, int value)
 
 /**
  * insert - insert to avl tree
- * @node: node
- * @size: size
- * @start: start of arr
  * @array: array
+ * @start: start of array
+ * @end: end of arr
+ * @parent: parent
  *
- * Return: new avl tree
+ * Return: root node to avl tree
  */
-avl_t *insert(avl_t **node, int size, int start, int *array)
+avl_t *insert(int *array, size_t start, size_t end, avl_t *parent)
 {
-	avl_t *new_avl = NULL;
-	int mid = (start + (size - 1)) / 2;
+	size_t mid;
+	avl_t *root;
 
-	if (start > size - 1)
+	if (start > end)
 		return (NULL);
-	new_avl = binary_tree_node(*node, array[mid]);
-	if (mid != start)
-		new_avl->left = insert(&new_avl, mid - 1, start, array);
-	if (mid != size)
-		new_avl->right = insert(&new_avl, size, mid + 1, array);
-	return (new_avl);
+
+	mid = (start + end) / 2;
+	root = binary_tree_node(parent, array[mid]);
+	if (root)
+	{
+		if (mid != end)
+			root->right = insert(array, mid + 1, end, root);
+		if (mid != start)
+			root->left = insert(array, start, mid - 1, root);
+
+	}
+
+	return (root);
 }
+
 
 /**
  * sorted_array_to_avl - function that builds an AVL tree from an array
@@ -59,6 +67,6 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 {
 	avl_t *avl;
 
-	avl = insert(&avl, size, 0, array);
+	avl = insert(array, 0, size - 1, NULL);
 	return (avl);
 }
