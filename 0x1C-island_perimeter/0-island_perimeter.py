@@ -2,6 +2,7 @@
 """[python script to calculate island perimeter]
 """
 
+
 def island_perimeter(grid):
     """[island_perimeter]
 
