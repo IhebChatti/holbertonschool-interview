@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * wildcmp - functiont hat compares two strings
+ * wildcmp - function that compares two strings
  * @s1: first string
  * @s2: second string
  *
- * returns 1 if the strings can be considered identical, else 0
+ * Return: 1 if the strings can be considered identical, else 0
  */
 int wildcmp(char *s1, char *s2)
 {
