@@ -5,16 +5,16 @@ from math import factorial
 
 
 def combination(n, r):
-    """[calculation of combinations]
+    """[combination]
     """
-    return (factorial(n)) / ((factorial(r)) * factorial(n - r))
+    return int((factorial(n)) / ((factorial(r)) * factorial(n - r)))
 
 
-def pascal_triangle(n):
-    """[pascal_triangle]
+def pascal_triangle(rows):
+    """[pascals_triangle]
     """
     result = []
-    for count in range(n):
+    for count in range(rows):
         row = []
         for element in range(count + 1):
             row.append(combination(count, element))
