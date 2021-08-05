@@ -9,9 +9,9 @@ def pascal_triangle(n):
     """[pascals_triangle]
     """
     result = []
-    for count in range(n):
+    for i in range(n):
         row = []
-        for element in range(count + 1):
-            row.append(int((factorial(count)) / ((factorial(element)) * factorial(count - element))))
+        for j in range(i + 1):
+            row.append(int((factorial(i)) / ((factorial(j)) * factorial(i - j))))
         result.append(row)
     return result
