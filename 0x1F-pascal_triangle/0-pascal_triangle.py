@@ -5,15 +5,16 @@
 from math import factorial
 
 
-def combination(n, r):
-    """[combination]
-    """
-    return int((factorial(n)) / ((factorial(r)) * factorial(n - r)))
 
 
 def pascal_triangle(rows):
     """[pascals_triangle]
     """
+    def combination(n, r):
+        """[combination]
+        """
+        return int((factorial(n)) / ((factorial(r)) * factorial(n - r)))
+
     result = []
     for count in range(rows):
         row = []
